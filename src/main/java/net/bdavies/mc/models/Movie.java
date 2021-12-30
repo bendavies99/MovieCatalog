@@ -34,7 +34,7 @@ public class Movie
 	private String title;
 
 	@ManyToOne
-	@JoinColumn(name = "director_id")
+	@JoinColumn(name = "director_id", nullable = false)
 	private Director director;
 
 	@OneToMany(mappedBy = "movie")
