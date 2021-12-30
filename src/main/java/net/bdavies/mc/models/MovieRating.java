@@ -18,11 +18,12 @@ public class MovieRating
 {
 	@Id
 	@GeneratedValue
-	private long id;
-	private float ratingValue;
+	private int id;
+	@Column(nullable = false)
+	private Float ratingValue = null;
 	private String comment;
 
 	@ManyToOne
-	@JoinColumn(name = "movie_id")
+	@JoinColumn(name = "movie_id", nullable = false)
 	private Movie movie;
 }

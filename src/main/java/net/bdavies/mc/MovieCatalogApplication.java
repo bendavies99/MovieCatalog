@@ -68,7 +68,7 @@ public class MovieCatalogApplication
 					val movieRating = new MovieRating();
 					movieRating.setMovie(movie);
 					movieRating.setComment("Test");
-					movieRating.setRatingValue(Math.round(random.nextFloat() * 3) + 2);
+					movieRating.setRatingValue((float) (Math.round(random.nextFloat() * 3) + 2));
 					movieRatingRepository.save(movieRating);
 				}
 			});
