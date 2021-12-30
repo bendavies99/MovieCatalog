@@ -19,11 +19,14 @@
    spring.datasource.password=pass
    ```
    
-## Running
+## Running for Dev
 Run in the cli:
  `MAVEN_OPTS="-Dspring-boot.run.jvmArguments=\"-Dspring.profiles.active=dev\"" ./mvnw spring-boot:run`
 
 Or Set the the VM Options for Maven to: `-Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev"` in your favorite IDE
+
+## Testing
+Run in the CLI: `./mvnw test`
 
 # Building for production
 Run in the CLI: `./mvnw clean install spring-boot:repackage`
