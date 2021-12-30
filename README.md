@@ -8,6 +8,11 @@
 
 # Getting Started
 
+## Prerequisites
+ - Maven
+ - Java 8
+ - PostgreSQL Server
+
 ## Installing
  - Clone the repo
  - run `./mvnw install`
