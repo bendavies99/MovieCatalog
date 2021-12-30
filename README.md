@@ -31,4 +31,4 @@ Run in the CLI: `./mvnw clean install spring-boot:repackage`
 # Running for Production
  - Goto your target directory
  - Run in your cli `java -jar movie-catalog-0.0.1.jar --spring.datasource.url=jdbc:postgresql://<host>:<port>/<db> --spring.datasource.username=<username> --spring.datasource.password=<password>`
- - **Make Sure to replace the <item> with your details**
+ - **Make Sure to replace the < item > with your details**
