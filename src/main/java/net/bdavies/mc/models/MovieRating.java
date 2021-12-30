@@ -5,6 +5,11 @@ import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Model definition for the MovieRating Object this ties closely to a movie model
+ *
+ * @author ben.davies
+ */
 @Entity
 @Data
 @NoArgsConstructor
