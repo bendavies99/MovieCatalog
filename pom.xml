@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.bdavies</groupId>
-	<artifactId>MovieCatalog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>movie-catalog</artifactId>
+	<version>0.0.1</version>
 	<name>MovieCatalog</name>
 	<description>REST API For Movies</description>
 	<properties>
