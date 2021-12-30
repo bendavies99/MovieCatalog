@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import net.bdavies.mc.exceptions.DirectorHasDirectedMoviesException;
 
 /**
  * Model Definition of the Director Object they will have multiple movies tied to them
@@ -39,11 +40,13 @@ public class Director
 	/**
 	 * Run before a entity is deleted and persisted and
 	 * ensure that the director is not used in any movies within the DB
+	 *
+	 * @throws DirectorHasDirectedMoviesException if the director has movies
 	 */
 	@PreRemove
 	private void preRemove() {
 		if (!moviesDirected.isEmpty()) {
-			throw new RuntimeException();
+			throw new DirectorHasDirectedMoviesException();
 		}
 	}
 }
