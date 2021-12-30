@@ -6,6 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import net.bdavies.mc.models.Director;
 import net.bdavies.mc.repositories.DirectorRepository;
@@ -18,6 +19,7 @@ import net.bdavies.mc.repositories.DirectorRepository;
  *
  * @author ben.davies
  */
+@Slf4j
 @Component("beforeCreateDirectorValidator")
 public class DirectorValidator implements Validator
 {

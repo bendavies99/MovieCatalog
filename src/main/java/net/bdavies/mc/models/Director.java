@@ -45,7 +45,7 @@ public class Director
 	 */
 	@PreRemove
 	private void preRemove() {
-		if (!moviesDirected.isEmpty()) {
+		if (moviesDirected != null && !moviesDirected.isEmpty()) {
 			throw new DirectorHasDirectedMoviesException();
 		}
 	}
