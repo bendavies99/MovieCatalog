@@ -9,6 +9,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+/**
+ * Model Definition of the Director Object they will have multiple movies tied to them
+ *
+ * @see Movie
+ * @author ben.davies
+ */
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,10 +32,14 @@ public class Director
 	@Column(unique = true, nullable = false)
 	private String email;
 
-	@OneToMany
+	@OneToMany(mappedBy = "director")
 	@ToString.Exclude
 	private List<Movie> moviesDirected;
 
+	/**
+	 * Run before a entity is deleted and persisted and
+	 * ensure that the director is not used in any movies within the DB
+	 */
 	@PreRemove
 	private void preRemove() {
 		if (!moviesDirected.isEmpty()) {
