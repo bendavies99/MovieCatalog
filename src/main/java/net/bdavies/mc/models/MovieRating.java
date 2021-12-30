@@ -18,7 +18,7 @@ public class MovieRating
 {
 	@Id
 	@GeneratedValue
-	private int id;
+	private long id;
 	private float ratingValue;
 	private String comment;
 
