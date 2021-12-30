@@ -1,13 +1,13 @@
 package net.bdavies.mc.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
+
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
@@ -19,8 +19,21 @@ public class Director
 	@GeneratedValue
 	private int id;
 
+	@Column(nullable = false)
 	private String firstName;
+	@Column(nullable = false)
 	private String lastName;
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	private String email;
+
+	@OneToMany
+	@ToString.Exclude
+	private List<Movie> moviesDirected;
+
+	@PreRemove
+	private void preRemove() {
+		if (!moviesDirected.isEmpty()) {
+			throw new RuntimeException();
+		}
+	}
 }
